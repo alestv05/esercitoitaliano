@@ -1,0 +1,112 @@
+
+/* Final Esercito-like exact theme (approximation) */
+/* Fonts: Montserrat for headings, Roboto for body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root{
+  --green-1: #0b3b2b; /* main dark green */
+  --green-2: #07261b; /* darker */
+  --gold:    #b78b2a; /* gold accent */
+  --muted:   #f3f4f2; /* page background */
+  --card-bg: #ffffff;
+  --text:    #0d1312;
+  --accent:  #eef1ec;
+  --max-w:   1220px;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Roboto", Arial, sans-serif;
+  background:var(--muted);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* top thin tricolor bar */
+.topbar{
+  height:8px;
+  background:linear-gradient(90deg, #009246 0 33.333%, #ffffff 33.333% 66.666%, #ce2b37 66.666% 100%);
+  width:100%;
+  box-shadow:0 1px 0 rgba(0,0,0,0.03);
+}
+
+/* header */
+.header{
+  background:linear-gradient(180deg,var(--green-1),var(--green-2));
+  color:white;
+  padding:12px 18px;
+  border-bottom:6px solid rgba(0,0,0,0.12);
+}
+.header .container{
+  max-width:var(--max-w); margin:0 auto; display:flex; align-items:center; gap:18px;
+  height:76px;
+}
+.brand{
+  display:flex; gap:14px; align-items:center; text-decoration:none; color:inherit;
+}
+.brand .shield{
+  width:72px; height:72px; border-radius:12px; background:linear-gradient(180deg,#d9c17a,#b78b2a);
+  box-shadow:0 4px 14px rgba(0,0,0,0.25); flex-shrink:0; display:flex; align-items:center; justify-content:center;
+}
+.brand .title{
+  font-family: "Montserrat", sans-serif;
+  font-weight:700; font-size:20px; letter-spacing:0.6px;
+}
+.brand .subtitle{font-size:12px; opacity:0.9; margin-top:4px}
+
+/* nav */
+.mainnav{margin-left:auto}
+.mainnav ul{list-style:none; display:flex; gap:10px; align-items:center;}
+.mainnav a{
+  color:rgba(255,255,255,0.95); text-decoration:none; padding:10px 14px; border-radius:10px;
+  font-weight:600; font-size:13px; text-transform:uppercase;
+}
+.mainnav a:hover{background:rgba(255,255,255,0.06)}
+.mainnav .btn-cta{
+  background:var(--gold); color:var(--green-2); padding:8px 14px; border-radius:12px; font-weight:700;
+  box-shadow:0 3px 0 rgba(0,0,0,0.06);
+}
+
+/* search / utilities */
+.header-tools{display:flex; gap:12px; align-items:center; margin-left:12px;}
+.search-input{display:inline-flex; align-items:center; background:rgba(255,255,255,0.06); padding:6px 8px; border-radius:8px;}
+.search-input input{border:0; background:transparent; color:var(--accent); outline:none; width:180px; font-size:13px;}
+
+/* hero */
+.hero{max-width:var(--max-w); margin:22px auto; padding:0 18px; display:flex; gap:18px; align-items:stretch}
+.hero .left{flex:1}
+.hero .right{width:360px}
+.hero-card{
+  background:var(--card-bg); border-radius:12px; padding:20px; box-shadow:0 10px 30px rgba(11,59,43,0.06);
+}
+.hero h1{font-family:"Montserrat",sans-serif; color:var(--green-2); font-size:30px; margin-bottom:8px}
+.hero p{color:#35433b}
+
+/* content grid */
+.content{max-width:var(--max-w); margin:16px auto; padding:0 18px}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.card{background:var(--card-bg); border-radius:10px; padding:16px; box-shadow:0 6px 18px rgba(11,59,43,0.04)}
+.card h3{font-family:"Montserrat",sans-serif; color:var(--green-2); margin-bottom:8px}
+
+/* footer */
+.footer{background:var(--green-2); color: #e6ebdf; padding:28px 18px; margin-top:26px}
+.footer .container{max-width:var(--max-w); margin:0 auto; display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap}
+.footer a{color:var(--gold); text-decoration:none; font-weight:600}
+
+/* responsive */
+@media(max-width:1000px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero .right{display:none}
+}
+@media(max-width:640px){
+  .header .container{height:auto; padding:12px 12px; flex-wrap:wrap}
+  .mainnav ul{flex-wrap:wrap; gap:8px}
+  .grid{grid-template-columns:1fr}
+  .brand .shield{width:56px;height:56px}
+  .hero h1{font-size:22px}
+}
+
+/* accessibility focus */
+a:focus, button:focus, input:focus{outline:3px solid rgba(183,139,42,0.18); outline-offset:2px}

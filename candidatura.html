@@ -237,10 +237,10 @@ footer{padding:28px 0;text-align:center;color:#899189;font-size:11px}
 const form = document.getElementById('applicationForm');
 const statusEl = document.getElementById('status');
 const submitButton = document.getElementById('submitButton');
-const CLIENT_ID = '1324431709139374212';  // <--- NUOVO CLIENT ID
-const REDIRECT_URI = encodeURIComponent(window.location.origin + window.location.pathname);
+const CLIENT_ID = '1324431709139374212';
+const REDIRECT_URI = encodeURIComponent('https://alestv05.github.io/esercitoitaliano/');
 const DISCORD_API_ENDPOINT = 'https://discord.com/api/v10';
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1541799364245065798/XPRsEqLCo50whwLLGRolOJL5Bs6E6KdZm5ES1NqiODqpCOCtdEYJhinch8G1fagLr7_j';  // <--- NUOVO WEBHOOK CANDIDATURA
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1541799364245065798/XPRsEqLCo50whwLLGRolOJL5Bs6E6KdZm5ES1NqiODqpCOCtdEYJhinch8G1fagLr7_j';
 let discordUserData = null;
 
 const $ = id => document.getElementById(id);
